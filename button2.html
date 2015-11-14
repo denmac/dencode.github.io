@@ -1,0 +1,32 @@
+<html>
+    <head>
+       <script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
+       <script>
+window.onload = function(){
+              function clicked() {
+                  var indexvalue = myindex.value;
+                   var myRequest = new XMLHttpRequest();
+                   myRequest.open("GET","initials.php?index=" + indexvalue,false);
+                   myRequest.send();
+                   var text = myRequest.responseText;
+                   console.log(text);
+              }
+              
+              
+              // getting the value from the form field
+              var term = document.getElementById("term");
+              var gobutton = document.getElementById("lookup");
+              gobutton.onclick = clicked;
+              // 
+                }                        
+       </script>
+        <title>Button</title>
+    </head>
+    <body>
+        <div>
+           <input id="term" type="text" placeholder="Enter text here" autofocus>
+			<button id="lookup">Lookup</button>
+            
+        </div>
+    </body>
+</html>
